@@ -18,8 +18,6 @@ class WPAIPDF_Loader
 
         require_once WPAIPDF_PLUGIN_DIR . 'includes/api/class-pdf-storage.php';
         require_once WPAIPDF_PLUGIN_DIR . 'includes/api/class-pdf-upload.php';
-
-        // NEW
         require_once WPAIPDF_PLUGIN_DIR . 'includes/api/class-openai.php';
         require_once WPAIPDF_PLUGIN_DIR . 'includes/api/class-chat.php';
     }
@@ -27,15 +25,28 @@ class WPAIPDF_Loader
     private function init_hooks()
     {
         $admin_menu = new WPAIPDF_Admin_Menu();
-
         $pdf_upload = new WPAIPDF_PDF_Upload();
-
-        // NEW
         $chat = new WPAIPDF_Chat();
 
-        add_action('admin_menu', array($admin_menu, 'register_menu'));
+        add_action(
+            'admin_menu',
+            array($admin_menu, 'register_menu')
+        );
 
-        add_action('admin_enqueue_scripts', array($this, 'enqueue_admin_assets'));
+        add_action(
+            'admin_enqueue_scripts',
+            array($this, 'enqueue_admin_assets')
+        );
+
+        add_action(
+            'wp_enqueue_scripts',
+            array($this, 'enqueue_frontend_assets')
+        );
+
+        add_action(
+            'wp_footer',
+            array($this, 'render_chat_widget')
+        );
     }
 
     public function enqueue_admin_assets($hook)
@@ -51,6 +62,16 @@ class WPAIPDF_Loader
             WPAIPDF_VERSION,
             true
         );
+    }
+
+    public function enqueue_frontend_assets()
+    {
+        wp_enqueue_style(
+            'wpaipdf-chat',
+            WPAIPDF_PLUGIN_URL . 'assets/css/chat.css',
+            array(),
+            WPAIPDF_VERSION
+        );
 
         wp_enqueue_script(
             'wpaipdf-chat',
@@ -59,5 +80,18 @@ class WPAIPDF_Loader
             WPAIPDF_VERSION,
             true
         );
+
+        wp_localize_script(
+            'wpaipdf-chat',
+            'wpaipdf',
+            array(
+                'ajax_url' => admin_url('admin-ajax.php'),
+            )
+        );
+    }
+
+    public function render_chat_widget()
+    {
+        require WPAIPDF_PLUGIN_DIR . 'templates/frontend/chat-widget.php';
     }
 }

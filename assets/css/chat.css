@@ -1,0 +1,103 @@
+#wpaipdf-chat-widget {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 420px;
+  z-index: 99999;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#wpaipdf-chat-toggle {
+  float: right;
+  background: #0d6efd;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 22px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+#wpaipdf-chat-window {
+  width: 100%;
+  height: 620px;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+  border: 1px solid #e6e6e6;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.wpaipdf-header {
+  background: #0d6efd;
+  color: #fff;
+  padding: 18px 20px;
+}
+
+.wpaipdf-header strong {
+  display: block;
+  font-size: 22px;
+}
+
+.wpaipdf-subtitle {
+  margin-top: 6px;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+/* ===== CHAT AREA ===== */
+
+#wpaipdf-response {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  background: #ffffff;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+/* ===== FOOTER ===== */
+
+.wpaipdf-footer {
+  padding: 16px;
+  border-top: 1px solid #ececec;
+  background: #fff;
+}
+
+#wpaipdf-question {
+  width: 100%;
+  height: 70px;
+  resize: none;
+  border: 1px solid #d8d8d8;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+#wpaipdf-question:focus {
+  outline: none;
+  border-color: #0d6efd;
+}
+
+#wpaipdf-ask-btn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  background: #0d6efd;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#wpaipdf-ask-btn:hover {
+  background: #0b5ed7;
+}
