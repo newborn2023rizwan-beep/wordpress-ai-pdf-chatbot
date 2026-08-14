@@ -43,12 +43,14 @@ Relevant Answer Generated
 Answer Displayed in Chatbot
 
 ```
-Project Structure
+## Project Structure
 
 wordpress-ai-pdf-chatbot/
+│
 ├── assets/
 │   ├── css/
 │   │   └── chat.css
+│   │
 │   └── js/
 │       ├── admin.js
 │       └── chat.js
@@ -84,6 +86,7 @@ wordpress-ai-pdf-chatbot/
 ├── wordpress-ai-pdf-chatbot.php
 └── README.md
 
+```
 Project Status
 Version: 1.0
 Type: WordPress AI Plugin
