@@ -45,6 +45,7 @@ Answer Displayed in Chatbot
 ```
 ## Project Structure
 
+```text
 wordpress-ai-pdf-chatbot/
 │
 ├── assets/
@@ -85,6 +86,7 @@ wordpress-ai-pdf-chatbot/
 ├── uninstall.php
 ├── wordpress-ai-pdf-chatbot.php
 └── README.md
+```
 
 ```
 Project Status
