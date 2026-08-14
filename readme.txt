@@ -5,7 +5,6 @@ An AI-powered WordPress chatbot that allows users to interact with PDF documents
 ## Introduction
 
 WordPress AI PDF Chatbot allows website administrators to upload and manage PDF documents and provide users with an interactive chatbot that can answer questions based on the uploaded documents.
-
 Instead of manually searching through long documents, users can simply ask questions and receive relevant answers through the chatbot.
 
 ## Business Purpose
